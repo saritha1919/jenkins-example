@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     stages {
-        stage ('Compile Stage') {
+        stage ('Develop Compile Stage') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('Develop Testing Stage') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
@@ -23,7 +23,7 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Develop Deployment Stage') {
             steps {
                 withMaven(maven : 'maven_3_5_0') {
                     sh 'mvn deploy'
